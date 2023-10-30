@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>crud</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form">
+            <input type="text" name="" id="todo-input" placeholder="please enter your todo list...">
+            <button id="add-btn">Add</button>
+            <button id="remove">remove</button>
+            <br>
+            status:
+            <select class="combo">
+                <option id="done" value="done">Done</option>
+                <option id="todo" value="todo">Todo</option>
+                <option id="all" value="all">All</option>
+            </select>
+            <button id="search">Search</button>
+            <input id="inp-search"type="text"placeholder="enter title...">
+        </div>
+        <div class="list">
+            <!-- <div class="item">
+                <input type="checkbox"/>
+               <span>item1</span> 
+            </div>
+            <div class="item">
+                <input type="checkbox"/>
+                <span>item2</span>
+            </div> -->
+        </div>
+    </div>
+    <script type="module" src="app.js"></script>
+
+</body>
+</html>
