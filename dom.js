@@ -33,9 +33,11 @@ export function renderItem(item){
     })
   }
   export function clearInput(){
-    Todo_input.value=""
+    Todo_input.value="";
 
-}
+  };
+
+
 export function renderList(){
     Todo_list.innerHTML="";
     

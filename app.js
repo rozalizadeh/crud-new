@@ -1,12 +1,20 @@
-import { loadFromStorage } from "./storage.js";
-import { list } from "./store.js";
-import { renderList} from "./dom.js"
-import { events } from "./events.js";
 
+import { list ,reset } from "./store.js";
+import { firstLoad } from "./storage.js";
+import { clearInput, renderList,Todo_input} from "./dom.js"
+import { events } from "./events.js";
+import { get_todos_list } from "./api/todos.js";
 
 function init(){
-    loadFromStorage();
+    firstLoad();
+    get_todos_list().then((list)=>{
+    
+    reset(list);
     renderList();
+
+
+   });
+
     events();
     console.log(list);
 }

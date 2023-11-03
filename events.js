@@ -1,5 +1,6 @@
-import { Todo_input,renderItem ,clearInput} from "./dom.js";
+import { Todo_input,renderItem,clearInput} from "./dom.js";
 import { addItem,onRemove,selectFilter,search } from "./functionality.js";
+import { deleteStorage, updateDraft } from "./storage.js";
 import { select_btn } from "./store.js";
 const Add_btn=document.querySelector("#add-btn");
 const remove_btn=document.querySelector("#remove");
@@ -25,6 +26,8 @@ function validationCheck(){
 }
 export function events(){
     Add_btn.addEventListener("click", validationCheck);     
+    Add_btn.addEventListener("click", deleteStorage);     
+
     
     remove_btn.addEventListener("click",()=>{
      onRemove(); })
@@ -41,5 +44,25 @@ export function events(){
     search_btn.addEventListener("click" ,()=>{
         search();
 
-    })     
+    })   
+    Todo_input.addEventListener("keyup",(e)=>{
+        console.log(e)
+        const char=e.key;
+        if(char === "Backspace"){
+             
+            
+            deleteStorage()
+        }
+        else if(char==="Delete"){
+            deleteStorage()
+
+        }
+        else{
+            updateDraft(char);
+
+        }
+
+
+
+    })  
         }
